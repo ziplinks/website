@@ -37,7 +37,7 @@
 
 
 ## 页面预览
-![demo.gif](demo.gif)
+![img.gif](img.gif)
 
 
 ## 🚀 开发
