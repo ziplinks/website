@@ -35,10 +35,21 @@
 
 - **网站首页配置化**：由后台管理进行统一配置网站首页风格
 
-
 ## 页面预览
 ![img.gif](img.gif)
 
+## 注意
+若想运行效果和页面预览一致，请在本地启动服务。需先安装 [mongodb数据库](https://www.mongodb.com/try/download/community)
+
+```bash
+
+# 进入目录
+cd mongodb/bin
+
+# 连接本地数据库
+mongod --dbpath=..\data\db
+
+```
 
 ## 🚀 开发
 
