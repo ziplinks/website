@@ -37,8 +37,8 @@
 
 
 ## 页面预览
+![](D:\website\demo.gif)
 
-![](C:\Users\bin.zhang1\Desktop\demo.gif)
 
 ## 🚀 开发
 
