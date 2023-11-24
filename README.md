@@ -37,7 +37,7 @@
 
 
 ## 页面预览
-![demo.gif](D:\website\demo.gif)
+![demo.gif](.\demo.gif)
 
 
 ## 🚀 开发
