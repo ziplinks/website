@@ -4,7 +4,7 @@ export interface GetTableRequestData {
   banner: string
 }
 export interface GetCardRequestData {
-  "cardList": array,
+  "cardList": object,
   "_id": string,
   "mainTitle"?: string
   "subTitle"?: string
@@ -13,7 +13,7 @@ export interface GetCardRequestData {
 }
 
 export interface GetFooterRequestData {
-  "cardList": array,
+  "cardList": object,
   "_id": string,
   "tel": string
   "email": string

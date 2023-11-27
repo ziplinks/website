@@ -4,11 +4,8 @@ export interface CreateBannerRequestData {
   banner: string
 }
 
-export interface UpdateBannerRequestData {
+export interface UpdateBannerRequestData extends CreateBannerRequestData{
   _id: string
-  mainTitle: string
-  subTitle: string
-  banner: string
 }
 
 export interface GetBannerRequestData {
@@ -34,25 +31,19 @@ export type GetTableResponseData = ApiResponseData<{
 export interface CreateCardRequestData {
   mainTitle?: string
   subTitle?: string
-  cardList: array
+  cardList: object
 }
 
-export interface UpdateCardRequestData {
+export interface UpdateCardRequestData extends CreateCardRequestData{
   _id: string
-  mainTitle?: string
-  subTitle?: string
-  cardList: array
 }
 
 export interface CreateFooterRequestData {
   tel: string
   email: string
-  cardList: array
+  cardList: object
 }
 
-export interface UpdateFooterRequestData {
+export interface UpdateFooterRequestData extends CreateFooterRequestData{
   _id: string
-  tel: string
-  email: string
-  cardList: array
 }
