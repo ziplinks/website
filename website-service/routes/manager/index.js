@@ -27,19 +27,34 @@ module.exports = app => {
         // console.log(req)
         if (!whiteList.includes(req.url)) {
             //获取请求头的token
-            const token = req.headers.authorization && req.headers.authorization.split(' ').pop();
+            const token = req.headers.authorization&&req.headers.authorization.split(' ').pop();
             assert(token, 401, '请先登录')
-
-            //取回加密后的用户id
-            const {
-                id
-            } = jwt.verify(token, app.get('secret'));
-            assert(id, 401, '请先登录')
-
-            //通过id查用户,并将用户信息挂载到req上
-            req.user = adminUser.findById(id);
-            assert(req.user, 401, '请先登录')
+            try {
+                //取回加密后的用户id
+                const {
+                    id,
+                    exp
+                } = jwt.verify(token, app.get('secret'));
+                assert(id, 401, '请先登录')
+                // if (Date.now() >= exp * 1000) {
+                //     throw new Error('token失效');
+                //   }
+                //   // 检查访问令牌是否即将过期（例如，过期前 1 分钟）
+                // const expirationThreshold = 30; // 单位：秒
+                // const currentTime = Math.floor(Date.now() / 1000);
+                // if (exp - currentTime <= expirationThreshold) {
+                //     // 访问令牌即将过期，延长过期时间
+                //     jwt.sign({ id }, app.get('secret'), { expiresIn: 60 });
+                // }
+        
+                //通过id查用户,并将用户信息挂载到req上
+                req.user = adminUser.findById(id);
+                assert(req.user, 401, '请先登录')
+            }catch (error) {
+                return res.status(401).json({ message: 'token失效' });
+            }
         }
+
         await next()
     }
 

@@ -18,7 +18,7 @@ module.exports = app => {
         // console.log(req)
         if (!whiteList.includes(req.url)) {
             //获取请求头的token
-            const token = req.headers.authorization && req.headers.authorization.split(' ').pop();
+            const token = req.headers.authorization&&req.headers.authorization.split(' ').pop();
             assert(token, 401, '请先登录')
 
             //取回加密后的用户id
@@ -112,7 +112,8 @@ module.exports = app => {
         //3.返回token
         //生成token
         const token = jwt.sign({
-            id: user._id
+            id: user._id,
+            // exp: Math.floor(Date.now() / 1000) + (60 * 1),
         }, app.get("secret"));
         res.send({
             code: 200,

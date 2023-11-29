@@ -6,7 +6,7 @@
 
 一个免费开源的中后台管理系统基础解决方案，前端基于 Vue3、TypeScript、Element Plus、Pinia 和 Vite 等主流技术.
 
-后端是基于node.js express框架结合mongoose数据库搭建，主要技术点有cors、http-assert、jsonwebtoken、multer、nodemon等
+后端服务是基于Express，它是一个流行的 Node.js Web 应用程序框架。数据库采用的是MongoDB，一种流行的开源 NoSQL 数据库管理系统，它以高性能、可扩展性和灵活性而闻名。主要技术点有cors、http-assert、jsonwebtoken、multer、nodemon等
 ## 特性
 
 - **Vue3**：采用 Vue3 + script setup 最新的 Vue3 组合式 API
